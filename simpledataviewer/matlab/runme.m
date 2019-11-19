@@ -13,16 +13,16 @@ clear all
 clc
 
 % add library
-addpath('../lib');
+addpath('../../common/matlab');
 
 % set data path
-path = '../../data/2/';
+path = '../data/wirephantom/';
 
 %% read rf data 
 filenameRF = '2019-11-18T23-21-01+0000_rf.raw';
 
 numFrames = 50;
-[dataRF, header] = dataread([path, filenameRF], numFrames);
+[dataRF, header] = rdataread([path, filenameRF], numFrames);
 if (numFrames > header.frames)
     numFrames = header.frames;
 end
@@ -42,7 +42,7 @@ end
 filenameIQ = '2019-11-18T23-21-01+0000_iq.raw';
 
 numFrames = 50;
-[dataIQ, header] = dataread([path, filenameIQ], numFrames);
+[dataIQ, header] = rdataread([path, filenameIQ], numFrames);
 if (numFrames > header.frames)
     numFrames = header.frames;
 end
@@ -69,7 +69,7 @@ end
 filenameB = '2019-11-18T23-21-01+0000_env.raw';
 
 numFrames = 50;
-[dataB, header] = dataread([path, filenameB], numFrames);
+[dataB, header] = rdataread([path, filenameB], numFrames);
 if (numFrames > header.frames)
     numFrames = header.frames;
 end

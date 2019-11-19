@@ -1,8 +1,8 @@
-function [data, header, ts] = dataread(filename, frames)
+function [data, header, ts] = rdataread(filename, frames)
 % reads and returns Clarius data
 %
 % Example
-%       [Im, header] = dataread(filename, frame);
+%       [Im, header] = rdataread(filename, frame);
 %
 % Inputs:  
 %       filename    The path of the data to open
