@@ -15,8 +15,7 @@ function [data, header, ts] = rdataread(filename, frames)
 %     header        The file header information   
 %     ts            The time stamp
 %
-% Copyright Clarius 
-% Author: Reza Zahiri, Sept 2017
+% Author: Reza Zahiri
 %
 % See also RunMe
 
@@ -77,7 +76,6 @@ elseif header.id == 2
     % read rf data
     nsamples = header.samples;
     nlines = header.lines;
-
     ts = zeros(1,frames);
     data = zeros(frames, nsamples, nlines);
     for f = 1:frames

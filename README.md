@@ -5,7 +5,7 @@ This repository contains scripts and other code to read and process data collect
 * /matlab this folder includes sample matlab script to read the data, the main matlab file is usually named "runme.me"
 * /python  this folder includes sample python script to read the data
 
-## Project (1) simpledataviewer <h1>
+## Project (1) viewer <h1>
 
 Contains different data types from both phantom and tissue as well as scripts to read and visualize these data:
 * Envelope (B greyscale)
