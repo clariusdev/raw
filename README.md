@@ -24,7 +24,11 @@ Data that can be acquired from Clarius scanners include:
 
 Once an exam has been completed and submitted in the App, the raw data will be accessible through:
 * Clarius Cloud when viewing the exam online. Packaged .tar files can be downloaded directly from a browser.
+
+![Raw Data Download](blob/raw_cloud.png)
 * Exporting the exam to local mobile device storage (only supported on Android) through the Exams page.
+
+![Raw Data Export](blob/save_device.png)
 * If the Listener API has also been purchased, raw data can be downloaded via a custom C/C++ program in a similar format to the App, but with immediate access once downloaded from the scanner.
 
 **Raw Data Formats**
