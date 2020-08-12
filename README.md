@@ -7,20 +7,20 @@ Data that can be acquired from Clarius scanners include:
 * IQ (quadrature data)
 * Envelope (B greyscale)
 
-**Capture Modes**
+## Capture Modes
 * To enable raw data capture, the Waveform icon from the modes menu can be pressed. The scanner will then buffer raw data while imaging.
 
 ![Raw Data Enabled](blob/raw_data_enable.png)
 * To enable RF data collection, the RF icon from the modes menu can be pressed. The scanner will then engage internal RF frame capture while scanning in B mode.
 * IQ and envelope data is captured by default when RF mode is not engaged; RF and envelope data is captured by default when RF mode is engaged.
 
-**Downloading Raw Data**
+## Downloading Raw Data
 * Once imaging is frozen with raw data capture engaged, the capture image or capture cine buttons will automatically download the data from the scanner. Note that in all cases, a packaged .tar file is acquired which then uses an LZO compression scheme for further compressing the raw data. When data is accessed, users should ensure that the proper software to decompress the files is installed on their operating system.
 * Downloading raw data over the wireless link can take some time since the packages can be large; for a single frame capture, a download time of 1-3 seconds is typical, for cine captures, where hundreds of frames may be acquired, downloads may take up to one minute.
 * During the download, users must wait before imaging once again, progress is shown on the interface while this occurs.
 * The scanner is pre-configured with raw data buffers of specific sizes that the system can support to offer stable and consistent imaging, in most cases, up to 10 seconds of raw IQ and RF can be captured, and upwards of 20 seconds of raw B/envelope data. The App can store a cine of up to 30 seconds, it is important to note that the raw data downloaded will always correspond to the latest frames in time. For example, if the cine capture markers are placed at 0-10 seconds within a 20 second capture, it is possible that no raw data will actually be downloaded.
 
-***Accessing Raw Data***
+### Accessing Raw Data
 
 Once an exam has been completed and submitted in the App, the raw data will be accessible through:
 * Clarius Cloud when viewing the exam online. Packaged .tar files can be downloaded directly from a browser.
@@ -31,7 +31,7 @@ Once an exam has been completed and submitted in the App, the raw data will be a
 ![Raw Data Export](blob/save_device.png)
 * If the Listener API has also been purchased, raw data can be downloaded via a custom C/C++ program in a similar format to the App, but with immediate access once downloaded from the scanner.
 
-**Raw Data Formats**
+## Raw Data Formats
 
 Once raw data files have been accessed onto a PC or other platform, the file structure will look similar to the following:
 * Standard Imaging Modes
@@ -98,7 +98,7 @@ and the corresponding file size will be:
 sizeof(Header) + (numFrames * (sizeof(Timestamp) + (numScanLines * numSamplesPerLine * sampleSizeInBytes)))
 ```
 
-***Data Type Formats***
+### Data Type Formats
 
 * B Mode data is always in 8-bit greyscale format that are pre scan-converted, meaning they are in ultrasound coordinates, and not pixel coordinates
 IQ data is always in 32-bit pairs of I and Q, where each I and Q sample is 16-bits. The demodulation frequency depends on the scanner and workflow, and may also vary on scanning parameters and depth.
