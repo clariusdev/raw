@@ -29,7 +29,7 @@ Once an exam has been completed and submitted in the App, the raw data will be a
 * Exporting the exam to local mobile device storage (only supported on Android) through the Exams page.
 
 ![Raw Data Export](blob/save_device.png)
-* If the Listener API has also been purchased, raw data can be downloaded via a custom C/C++ program in a similar format to the App, but with immediate access once downloaded from the scanner.
+* If the Cast API is available for the device, raw data can be downloaded via a custom C/C++ program in a similar format to the App, but with immediate access once downloaded from the scanner.
 
 ## Raw Data Formats
 
