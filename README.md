@@ -8,21 +8,21 @@ Data that can be acquired from Clarius scanners include:
 * Envelope (B greyscale)
 
 ## Capture Modes
-* To enable raw data capture, the Buffer icon from the modes menu can be pressed. The scanner will then buffer raw data while imaging.
+* To enable raw data capture, the **Buffer** icon from the modes menu can be pressed. The scanner will then buffer raw data while imaging.
 
 ![Buffer Raw Data](blob/buffer.png)
-* To enable RF data collection, the RF icon from the modes menu can be pressed. The scanner will then engage internal RF frame capture while scanning in B mode.
+* To enable RF data collection, the **RF** icon from the modes menu can be pressed. The scanner will then engage internal RF frame capture while scanning in B mode.
 
 ![Buffer Raw Data](blob/rf.png)
 * IQ and envelope data is captured by default when RF mode is not engaged; RF and envelope data are captured by default when RF mode is engaged.
 
 ## RF Streaming
-* RF mode collects data within the region-of-interest (ROI) placed over the greyscale image.
-* When RF mode is engaged, RF streaming is enabled by default.
-** While streaming is engaged, RF frames will be interleaved every 3 B/greyscale frames, and thus streamed at a lower frame rate than B. Buffering the RF data will also buffer at this rate.
-** When streaming is disabled, RF frames will be interleaved with every B/greyscale frame, thus increasing the frame rate, and affected by the buffering control only.
+* RF streaming is enabled by default when engaging RF mode, and can be toggled through the **Stream** icon.
 
 ![Buffer Raw Data](blob/stream.png)
+* RF mode collects data within the region-of-interest (ROI) placed over the greyscale image.
+* While streaming is engaged, RF frames will be interleaved every 3 B/greyscale frames, and thus streamed at a lower frame rate than B. Buffering the RF data will also buffer at this rate.
+* When streaming is disabled, RF frames will be interleaved with every B/greyscale frame, thus increasing the frame rate, and affected by the buffering control only.
 * Streaming of RF data is used **only** for visualization within the App, therefore data streamed is not stored for further use; however when users connect to the scanner with the Cast API while RF is streaming, streaming of RF signals will automatically be routed to the API connected device.
 
 ## Downloading Raw Data
