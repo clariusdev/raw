@@ -45,20 +45,20 @@ Once an exam has been completed and submitted in the App, the raw data will be a
 ## Raw Data Formats
 
 Once raw data files have been accessed onto a PC or other platform, the file structure will look similar to the following:
-* Standard Imaging Modes
-** timestamp_env.raw.lzo
-** timestamp_env.tgc
-** timestamp_env.yml
-** timestamp_iq.raw.lzo
-** timestamp_iq.tgc
-** timestamp_iq.yml
-* RF Mode
-** timestamp_env.raw.lzo
-** timestamp_env.tgc
-** timestamp_env.yml
-** timestamp_rf.raw.lzo
-** timestamp_rf.tgc
-** timestamp_rf.yml
+- Standard Imaging Modes
+    - timestamp_env.raw.lzo
+    - timestamp_env.tgc
+    - timestamp_env.yml
+    - timestamp_iq.raw.lzo
+    - timestamp_iq.tgc
+    - timestamp_iq.yml
+- RF Mode
+    - timestamp_env.raw.lzo
+    - timestamp_env.tgc
+    - timestamp_env.yml
+    - timestamp_rf.raw.lzo
+    - timestamp_rf.tgc
+    - timestamp_rf.yml
 
 The .yml files (see YAML markup language definition) contain meta-information about the raw data collected, such as:
 * Frame Rates
