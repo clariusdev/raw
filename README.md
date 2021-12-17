@@ -1,4 +1,4 @@
-# Signal Processing
+# Raw Data
 
 This repository contains scripts and other code to read and process data collected from Clarius scanners. Each folder contains a specific project, and within includes sample data and matlab/python scripts to read, process, and display the data.
 
@@ -8,11 +8,22 @@ Data that can be acquired from Clarius scanners include:
 * Envelope (B greyscale)
 
 ## Capture Modes
-* To enable raw data capture, the Waveform icon from the modes menu can be pressed. The scanner will then buffer raw data while imaging.
+* To enable raw data capture, the Buffer icon from the modes menu can be pressed. The scanner will then buffer raw data while imaging.
 
-![Raw Data Enabled](blob/raw_data_enable.png)
+![Buffer Raw Data](blob/buffer.png)
 * To enable RF data collection, the RF icon from the modes menu can be pressed. The scanner will then engage internal RF frame capture while scanning in B mode.
-* IQ and envelope data is captured by default when RF mode is not engaged; RF and envelope data is captured by default when RF mode is engaged.
+
+![Buffer Raw Data](blob/rf.png)
+* IQ and envelope data is captured by default when RF mode is not engaged; RF and envelope data are captured by default when RF mode is engaged.
+
+## RF Streaming
+* RF mode collects data within the region-of-interest (ROI) placed over the greyscale image.
+* When RF mode is engaged, RF streaming is enabled by default.
+** While streaming is engaged, RF frames will be interleaved every 3 B/greyscale frames, and thus streamed at a lower frame rate than B. Buffering the RF data will also buffer at this rate.
+** When streaming is disabled, RF frames will be interleaved with every B/greyscale frame, thus increasing the frame rate, and affected by the buffering control only.
+
+![Buffer Raw Data](blob/stream.png)
+* Streaming of RF data is used **only** for visualization within the App, therefore data streamed is not stored for further use; however when users connect to the scanner with the Cast API while RF is streaming, streaming of RF signals will automatically be routed to the API connected device.
 
 ## Downloading Raw Data
 * Once imaging is frozen with raw data capture engaged, the capture image or capture cine buttons will automatically download the data from the scanner. Note that in all cases, a packaged .tar file is acquired which then uses an LZO compression scheme for further compressing the raw data. When data is accessed, users should ensure that the proper software to decompress the files is installed on their operating system.
@@ -26,7 +37,7 @@ Once an exam has been completed and submitted in the App, the raw data will be a
 * Clarius Cloud when viewing the exam online. Packaged .tar files can be downloaded directly from a browser.
 
 ![Raw Data Download](blob/raw_cloud.png)
-* Exporting the exam to local mobile device storage (only supported on Android) through the Exams page.
+* Exporting the exam to local mobile device storage can be done when ending the exam or through the Exams page. As of App version, 8.6, iOS is now supported to store non image data into the file system.
 
 ![Raw Data Export](blob/save_device.png)
 * If the Cast API is available for the device, raw data can be downloaded via a custom C/C++ program in a similar format to the App, but with immediate access once downloaded from the scanner.
