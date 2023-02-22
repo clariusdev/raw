@@ -116,7 +116,7 @@ IQ data is always in 32-bit pairs of I and Q, where each I and Q sample is 16-bi
 
 * RF data is always 16-bit beamformed samples, where Clarius digitizes natively at 60 MHz. Further down-sampling may be performed to ensure data can be captured, buffered, and transferred properly. At depths < 2cm, 60MHz sampling is applied; at 2 - 4cm, 30MHz sampling is applied; at depths > 4cm, 15 MHz sampling is applied.
 
-### Synchronization
+# Synchronization
 
 The probe has the ability to send a 5V TTL signal from the pins on the rear. Pin 9 outputs the signal, with pins 5 and 8 being connected to ground - a diagram is shown below. One can use the HD3 fan CAD to design a custom connector that will attach to the rear of the probe and output the pulse through a custom BNC or something similar.
 
