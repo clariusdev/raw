@@ -115,3 +115,11 @@ sizeof(Header) + (numFrames * (sizeof(Timestamp) + (numScanLines * numSamplesPer
 IQ data is always in 32-bit pairs of I and Q, where each I and Q sample is 16-bits. The demodulation frequency depends on the scanner and workflow, and may also vary on scanning parameters and depth.
 
 * RF data is always 16-bit beamformed samples, where Clarius digitizes natively at 60 MHz. Further down-sampling may be performed to ensure data can be captured, buffered, and transferred properly. At depths < 2cm, 60MHz sampling is applied; at 2 - 4cm, 30MHz sampling is applied; at depths > 4cm, 15 MHz sampling is applied.
+
+### Synchronization
+
+The probe has the ability to send a 5V TTL signal from the pins on the rear. Pin 9 outputs the signal, with pins 5 and 8 being connected to ground - a diagram is shown below. One can use the HD3 fan CAD to design a custom connector that will attach to the rear of the probe and output the pulse through a custom BNC or something similar.
+
+To enable the signal output, open the research menu and press the **Sync** button (two circular arrows). The signal will be output at the start of each frame acquisition. Note that Clarius' ultrasound sequencing is semi-asynchronous with respect to frame acquisition, meaning the time between each frame will not be exactly the same, but generally within 1 millisecond.
+
+![Pin Output](blob/pins.png)
