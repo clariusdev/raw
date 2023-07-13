@@ -129,11 +129,17 @@ The following is a non-exhaustive list of low level parameters that can be progr
 Floating Point:
 - txFreq: transmit frequency in MHz
 - txFn: transmit f-number
-- txApt: transmit aperture in elements (2- 64)
+- txApt: maximum transmit aperture in elements (2- 64)
+- txFocus: focus depth in centimeters
 - steer: image steering in degrees
 - rxFn: receive f-number
+- rxFreqShallow: start demodulation frequency in MHz
+- rxFreqDeep: end demodulation frequency in MHz
 - speedOfSound: speed of sound correction in m/s
-  
+- rfDecimation: decimation factor used for IQ data
+- envDecimation: decimation factor used for envelope/grayscale data
+- rfDecim: decimation factor of the RF signal acquisition
+
 Booleans:
 - sa: synthetic aperture
 - pih: pulse inversion harmonics
