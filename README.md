@@ -121,3 +121,20 @@ The probe has the ability to send a 3.3V CMOS signal from the pins on the rear. 
 To enable the signal output, open the research menu and press the **Sync** button (two circular arrows). The signal will be output at the start of each frame acquisition. Note that Clarius' ultrasound sequencing is semi-asynchronous with respect to frame acquisition, meaning the time between each frame will not be exactly the same, but generally within 1 millisecond.
 
 ![Pin Output](blob/pins.png)
+
+## Low Level Parameters
+
+The following is a non-exhaustive list of low level parameters that can be programmed through the Cast API
+
+Floating Point:
+- txFreq: transmit frequency in MHz
+- txFn: transmit f-number
+- txApt: transmit aperture in elements (2- 64)
+- steer: image steering in degrees
+- rxFn: receive f-number
+- speedOfSound: speed of sound correction in m/s
+  
+Booleans:
+- sa: synthetic aperture
+- pih: pulse inversion harmonics
+- trapezoidal: extended field of view for linear probes
