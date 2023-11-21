@@ -120,7 +120,11 @@ The probe has the ability to send a 3.3V CMOS signal from the pins on the rear. 
 
 To enable the signal output, open the research menu and press the **Sync** button (two circular arrows). The signal will be output at the start of each frame acquisition. Note that Clarius' ultrasound sequencing is semi-asynchronous with respect to frame acquisition, meaning the time between each frame will not be exactly the same, but generally within 1 millisecond.
 
-![Pin Output](blob/pins.png)
+The timing diagram below illustrates the relationship between sync pulse, transmit and receive.
+![Tx Rx Timing](blob/TxRx_timing.png)
+
+Below is a scope capture of the sync pulse which is a single ended 3.3V CMOS signal.
+![Sync Pulse](blob/sync_pulse.png)
 
 ## Low Level Parameters
 
