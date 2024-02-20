@@ -133,11 +133,16 @@ Below is a scope capture of the sync pulse which is a single ended 3.3V CMOS sig
 The following is a non-exhaustive list of low level parameters that can be programmed through the Cast API
 
 Floating Point:
-- txFreq: transmit frequency in MHz
-- txFn: transmit f-number
-- txApt: maximum transmit aperture in elements (2- 64)
-- txFocus: focus depth in centimeters
-- steer: image steering in degrees
+- txFreq: transmit frequency in MHz **
+- txFreqInv: transmit frequency in MHz for the inversion pulse **
+- txFn: transmit f-number **
+- txApt: maximum transmit aperture in elements (2 - 64) **
+- txFocus: focus depth in centimeters **
+- vpp: positive amplitude in volts (10 - 37) **
+- vnn: negative amplitude in volts (10 - 37) **
+- ceVpp: positive amplitude in volts for CEUS (10 - 37) **
+- ceVnn: negative amplitude in volts for CEUS (10 - 37) **
+- steer: image steering in degrees **
 - rxFn: receive f-number
 - rxFreqShallow: start demodulation frequency in MHz
 - rxFreqDeep: end demodulation frequency in MHz
@@ -145,8 +150,17 @@ Floating Point:
 - rfDecimation: decimation factor used for IQ data
 - envDecimation: decimation factor used for envelope/grayscale data
 - rfDecim: decimation factor of the RF signal acquisition
+- dyn: dynamic range in dB
+- nf: noise floor in dB
 
-Booleans:
+Boolean:
 - sa: synthetic aperture
 - pih: pulse inversion harmonics
 - trapezoidal: extended field of view for linear probes
+
+String:
+- txPulseGen: transmit pulse **
+- txPulsePen: transmit pulse when pentetration mode is active **
+- txPulseInv: transmit pulse for the inversion pulse **
+
+** Notes that changing this parameter may alter the acoustic output of the transducers making the imaging operate outside of the safety parameters Clarius has programmed into the device
