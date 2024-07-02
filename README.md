@@ -132,7 +132,9 @@ Below is a scope capture of the sync pulse which is a single ended 3.3V CMOS sig
 
 The following is a non-exhaustive list of low level parameters that can be programmed through the Cast API
 
-Floating Point:
+### Floating Point Parameters
+
+Greyscale:
 - txFreq: transmit frequency in MHz **
 - txFreqInv: transmit frequency in MHz for the inversion pulse **
 - txFn: transmit f-number **
@@ -153,14 +155,37 @@ Floating Point:
 - dyn: dynamic range in dB
 - nf: noise floor in dB
 
-Boolean:
+Color/Power Doppler:
+- cfiPrf: pulse repetition frequency in kHz (range varies per probe/preset) **
+- cfiTxFreq: transmit frequency in MHz **
+- color steer: steering angle in degrees
+- cfiEnsemble: # of ensemble / transmits per line (6 - 16) **
+
+Pulsed Wave Doppler:
+- pwPrf: pulse repetition frequency in kHz (range varies per probe/preset) **
+- pwTxFreq: transmit frequency in MHz **
+- pw gate size: gate size in mm
+- pw steer: steering angle in degrees
+- pw angle correct: correction angle in degrees
+  
+### Boolean Parameters
+
+Greyscale:
 - sa: synthetic aperture
 - pih: pulse inversion harmonics
 - trapezoidal: extended field of view for linear probes
 
-String:
+### String Parameters
+
+Greyscale:
 - txPulseGen: transmit pulse **
 - txPulsePen: transmit pulse when pentetration mode is active **
 - txPulseInv: transmit pulse for the inversion pulse **
+
+Color/Power Doppler:
+- cfiPulse: transmit pulse **
+
+Pulsed Wave Doppler:
+- pwPulse: transmit pulse **
 
 ** Notes that changing this parameter may alter the acoustic output of the transducers making the imaging operate outside of the safety parameters Clarius has programmed into the device
