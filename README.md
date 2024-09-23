@@ -134,6 +134,9 @@ The following is a non-exhaustive list of low level parameters that can be progr
 
 ### Floating Point Parameters
 
+Generic:
+- maxFrameRate: frame rate limit in Hz (0 - 100, where 0 is no limit)
+
 Greyscale:
 - txFreq: transmit frequency in MHz **
 - txFreqInv: transmit frequency in MHz for the inversion pulse **
